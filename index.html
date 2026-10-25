@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tracework · 研究工作台</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">✦</span><span>tracework</span></div>
+      <div class="workspace-label">我的工作区</div>
+      <nav>
+        <button class="nav-item active" data-view="overview"><span>⌂</span>研究总览</button>
+        <button class="nav-item" data-view="evidence"><span>◈</span>资料与证据 <b>24</b></button>
+        <button class="nav-item" data-view="insights"><span>✦</span>洞察地图</button>
+        <button class="nav-item" data-view="report"><span>▤</span>机会报告</button>
+      </nav>
+      <div class="sidebar-bottom"><button class="new-project" id="newProject">＋ 新建研究项目</button><div class="profile"><span class="avatar">林</span><div><strong>林同学</strong><small>产品设计专业</small></div><span>•••</span></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div class="breadcrumbs">项目 / <strong>年轻人居家烹饪</strong></div><div class="top-actions"><button class="icon-btn">⌕</button><button class="icon-btn">?</button><button class="export-btn" id="exportBtn">导出报告 ↗</button></div></header>
+      <div class="content">
+        <section class="view active" id="overview">
+          <div class="hero"><div><div class="eyebrow">研究项目 · 进行中</div><h1>年轻人为什么不愿意做饭？</h1><p>从消费趋势、真实用户反馈和竞品动态中，寻找居家烹饪的新机会。</p></div><button class="primary" id="refreshResearch">↻ 更新研究</button></div>
+          <div class="stats"><div class="stat"><span>已发现资料</span><strong>24</strong><small class="up">↗ 6 条新发现</small></div><div class="stat"><span>识别用户群体</span><strong>4</strong><small>基于 86 条证据</small></div><div class="stat"><span>待验证洞察</span><strong>7</strong><small class="warn">需要进一步访谈</small></div><div class="stat"><span>研究完整度</span><strong>68%</strong><div class="progress"><i style="width:68%"></i></div></div></div>
+          <div class="section-head"><div><h2>研究动态</h2><p>AI 正在持续扫描你关注的领域</p></div><button class="text-btn">查看全部 →</button></div>
+          <div class="activity-grid"><article class="activity-card trend"><div class="card-tag purple">趋势发现</div><h3>“一人食”消费正在从便利转向疗愈</h3><p>近 30 天，关于“做饭是给自己的仪式感”的讨论增加了 34%。年轻用户在意的不只是速度，也在意过程是否轻松、有趣。</p><div class="card-foot"><span>12 个来源支持</span><span>今天 10:42</span></div></article><article class="activity-card"><div class="card-tag orange">用户洞察</div><h3>最大阻力不是不会做，而是不想收拾</h3><p>在 18 条用户反馈中，“清洗和收纳”被提及 11 次，远高于“缺少菜谱”和“没有时间”。</p><div class="card-foot"><span>18 条用户原话</span><span>昨天</span></div></article></div>
+          <div class="section-head compact"><div><h2>下一步建议</h2><p>让研究继续向前推进</p></div></div>
+          <div class="suggestions"><button class="suggestion"><span class="suggestion-icon blue">⌕</span><div><strong>寻找反例</strong><small>哪些年轻人其实喜欢做饭？</small></div><span>→</span></button><button class="suggestion"><span class="suggestion-icon green">♧</span><div><strong>准备访谈</strong><small>生成 8 个验证“收拾成本”的问题</small></div><span>→</span></button><button class="suggestion"><span class="suggestion-icon pink">◌</span><div><strong>对比竞品</strong><small>看看现有产品如何解决清洁问题</small></div><span>→</span></button></div>
+        </section>
+        <section class="view" id="evidence"><div class="page-title"><div><div class="eyebrow">24 条已整理资料</div><h1>资料与证据</h1><p>每一个结论，都可以追溯到它的来源。</p></div><button class="primary">＋ 添加资料</button></div><div class="toolbar"><div class="search">⌕ <input placeholder="搜索资料、用户原话或标签" /></div><button class="filter">全部类型⌄</button><button class="filter">最新添加⌄</button></div><div class="evidence-list"><article><div class="source-icon red">小</div><div class="evidence-body"><div class="source-meta">小红书 · 用户讨论 <span>3 小时前</span></div><h3>“不是不想做饭，是做完之后的厨房让我崩溃”</h3><p>用户描述了从准备、烹饪到清洁的完整负担，尤其强调“一个人吃饭却要洗一堆东西”的不成比例感。</p><div class="chips"><span>用户原话</span><span>清洁成本</span><span class="confidence">● 高关联</span></div></div><button class="more">•••</button></article><article><div class="source-icon blue">报</div><div class="evidence-body"><div class="source-meta">艾瑞咨询 · 行业报告 <span>昨天</span></div><h3>2025 年中国一人食市场规模达到 2,180 亿元</h3><p>一人食场景持续增长，消费者愿意为小份量、低准备成本和更灵活的产品形态付费。</p><div class="chips"><span>数据</span><span>消费趋势</span><span class="confidence">● 高可信度</span></div></div><button class="more">•••</button></article><article><div class="source-icon green">评</div><div class="evidence-body"><div class="source-meta">电商评论 · 小型厨具 <span>2 天前</span></div><h3>“买来想解决懒人做饭，结果零件更多更难洗”</h3><p>多个用户提到产品功能增加后，拆卸、清洗和晾干成为新的使用门槛。</p><div class="chips"><span>竞品反馈</span><span>反向证据</span><span class="confidence">● 中关联</span></div></div><button class="more">•••</button></article></div></section>
+        <section class="view" id="insights"><div class="page-title"><div><div class="eyebrow">基于 86 条证据生成</div><h1>洞察地图</h1><p>从资料到机会，查看每一步推理。</p></div><button class="primary">＋ 新增洞察</button></div><div class="map"><div class="map-col"><h4>用户群体</h4><div class="map-card violet"><strong>独居上班族</strong><span>高频 · 32 条证据</span></div><div class="map-card violet"><strong>合租学生</strong><span>中频 · 21 条证据</span></div><div class="map-card violet"><strong>新手家庭</strong><span>低频 · 9 条证据</span></div></div><div class="map-col"><h4>核心场景</h4><div class="map-card amber"><strong>下班回家后</strong><span>疲惫、时间有限</span></div><div class="map-card amber"><strong>周末独自用餐</strong><span>想放松但不想麻烦</span></div><div class="map-card amber"><strong>尝试新菜式</strong><span>兴趣高、失败成本高</span></div></div><div class="map-col wide"><h4>洞察与机会</h4><div class="insight-card"><div class="card-tag orange">高置信洞察</div><h3>用户不是拒绝烹饪，而是拒绝烹饪后的残局。</h3><p>当清洁、收纳的心理成本超过做饭带来的满足感时，用户会选择外卖，即使他们知道自己想吃得更健康。</p><div class="evidence-link">↗ 查看 18 条支持证据</div></div><div class="opportunity"><span class="opportunity-mark">✦</span><div><div class="card-tag purple">设计机会</div><strong>如何让“一人食”的整个过程，在结束时也能保持轻盈？</strong></div><span>→</span></div></div></div></section>
+        <section class="view" id="report"><div class="page-title"><div><div class="eyebrow">自动生成 · 可编辑</div><h1>机会报告</h1><p>将研究过程整理成可分享、可验证的设计 brief。</p></div><button class="primary" id="downloadBtn">下载 PDF ↗</button></div><div class="report-card"><div class="report-label">RESEARCH BRIEF · 01</div><h2>让一人食回到轻松本身</h2><p class="report-intro">年轻人需要的不是更多“快速做饭”的工具，而是一种不制造额外负担的完整体验。</p><hr/><div class="report-grid"><div><label>目标用户</label><p>22–30 岁，独居或合租的城市上班族</p></div><div><label>核心问题</label><p>清洁和收纳带来的心理成本，让烹饪失去吸引力</p></div><div><label>设计原则</label><p>减少残局，而不只是减少烹饪时间</p></div><div><label>下一步验证</label><p>访谈 5 位每周点外卖 3 次以上的独居用户</p></div></div><div class="report-quote">“如果只需要洗一个锅，我可能愿意每天做饭。”<small>— 用户访谈候选原话</small></div></div></section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div><script src="app.js"></script>
+</body></html>

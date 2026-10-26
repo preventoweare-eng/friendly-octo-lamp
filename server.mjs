@@ -24,7 +24,12 @@ async function searchDuckDuckGo(query){
   if(data.AbstractURL) rows.push({title:data.Heading||query,url:data.AbstractURL,source:new URL(data.AbstractURL).hostname,excerpt:data.AbstractText||'',provider:'DuckDuckGo'});
   const flatten=items=>(items||[]).forEach(item=>{if(item.FirstURL)rows.push({title:cleanText(item.Text)||query,url:item.FirstURL,source:new URL(item.FirstURL).hostname,excerpt:cleanText(item.Text),provider:'DuckDuckGo'});flatten(item.Topics)});
   flatten(data.RelatedTopics);
-  return rows.slice(0,8).map(item=>({...item,id:resultId(item.url)}));
+  if(rows.length<3){
+    const html=await fetch(`https://html.duckduckgo.com/html/?q=${encodeURIComponent(query)}`,{headers:{'user-agent':'Mozilla/5.0 Tracework Research/1.0'}}).then(r=>r.ok?r.text():'');
+    const links=[...html.matchAll(/result__a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)];
+    for(const match of links){let href=match[1];if(href.startsWith('//'))href='https:'+href;try{const parsed=new URL(href);if(parsed.hostname.includes('duckduckgo.com'))continue;rows.push({title:cleanText(match[2]),url:href,source:parsed.hostname,excerpt:'来自网页搜索结果，打开原文后请人工审核。',provider:'DuckDuckGo Web'});}catch{}}
+  }
+  const unique=[...new Map(rows.map(item=>[item.url,item])).values()];return unique.slice(0,8).map(item=>({...item,id:resultId(item.url)}));
 }
 async function handleSearch(req,res,url){
   const query=(url.searchParams.get('q')||'').trim();

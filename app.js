@@ -1,5 +1,5 @@
 const $=(s,r=document)=>r.querySelector(s);const $$=(s,r=document)=>[...r.querySelectorAll(s)];
-const apiBase=(()=>{const q=new URLSearchParams(location.search).get('api');return (q||window.TRACEWORK_API_BASE||localStorage.getItem('tracework-api-base')||'').replace(/\/$/,'')})();
+const apiBase=(()=>{const q=new URLSearchParams(location.search).get('api');return (q||window.TRACEWORK_API_BASE||localStorage.getItem('tracework-api-base')||'https://friendly-octo-lamp.onrender.com').replace(/\/$/,'')})();
 function apiUrl(path){return `${apiBase}${path}`}
 const toast=$('#toast');let toastTimer;
 function showToast(m){toast.textContent=m;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2600)}

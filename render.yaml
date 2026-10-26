@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: tracework-search
+    runtime: node
+    buildCommand: ""
+    startCommand: node server.mjs
+    healthCheckPath: /api/health
+    envVars:
+      - key: TAVILY_API_KEY
+        sync: false
